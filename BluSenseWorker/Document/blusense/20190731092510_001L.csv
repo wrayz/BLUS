@@ -1,0 +1,44 @@
+Date,Time,Test Item,Result,SN,SW Version,Use
+27-05-19,14:20,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+27-05-19,14:38,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+30-05-19,10:59,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+30-05-19,11:08,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+30-05-19,11:22,ViroTrack Acute Dengue NS1 Ag,POS,001L,6.0.10,CE
+10-06-19,9:26,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+10-06-19,9:52,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+10-06-19,10:05,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+10-06-19,10:12,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+10-06-19,10:25,ViroTrack Acute Dengue NS1 Ag,POS,001L,6.0.10,CE
+13-06-19,8:16,ViroTrack Acute Dengue NS1 Ag,POS,001L,6.0.10,CE
+14-06-19,14:42,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+20-06-19,7:56,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+20-06-19,8:02,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+20-06-19,8:16,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+26-06-19,11:02,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+26-06-19,13:10,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+26-06-19,13:29,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+26-06-19,18:11,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+26-06-19,18:19,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+26-06-19,18:26,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+26-06-19,19:02,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+26-06-19,19:12,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+26-06-19,19:52,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+28-06-19,21:35,ViroTrack Acute Dengue NS1 Ag,EQ,001L,6.0.10,CE
+28-06-19,21:50,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+03-07-19,12:22,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+04-07-19,11:08,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+04-07-19,11:20,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+04-07-19,12:45,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+10-07-19,20:42,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+10-07-19,20:54,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+10-07-19,21:30,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+16-07-19,10:07,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+17-07-19,17:14,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+17-07-19,17:27,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+17-07-19,19:32,ViroTrack Acute Dengue NS1 Ag,NEG,001L,6.0.10,CE
+18-07-19,16:42,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+18-07-19,16:56,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+23-07-19,21:10,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+26-07-19,16:24,ViroTrack Acute Dengue NS1 Ag,QC FAILED,001L,6.0.10,CE
+30-07-19,20:17,ViroTrack Acute Dengue NS1 Ag,POS,001L,6.0.10,CE
+30-07-19,20:32,ViroTrack Acute Dengue NS1 Ag,EQ,001L,6.0.10,CE
