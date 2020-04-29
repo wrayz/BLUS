@@ -20,13 +20,13 @@ namespace BluSenseWorker
             var path = GetFilePath(name);
             try
             {
-                Console.WriteLine($"[Worker Starting] Reading {path} at {DateTime.Now}");
+                Console.WriteLine($"[Worker] Reading {path} at {DateTime.Now}");
 
                 var reader = new RepFileReader(path);
                 var parser = new RepFileParser(reader);
                 parser.Parsing();
 
-                Console.WriteLine($"[Worker DB] Saving RepFiles at {DateTime.Now}");
+                Console.WriteLine($"[Worker] RepFiles saving into database at {DateTime.Now}");
                 var repFileLogic = new RepFileBusinessLogic(_configuration);
                 repFileLogic.Save(parser.RepFiles);
 
@@ -34,7 +34,7 @@ namespace BluSenseWorker
                 var bluboxLogic = new BluBoxBussinessLogic(_configuration);
                 bluboxLogic.Save(name, parser.RepFiles.LastOrDefault());
 
-                Console.WriteLine($"[Worder Finished] Done at {DateTime.Now}.");
+                Console.WriteLine($"[Worder] Done at {DateTime.Now}.");
             }
             catch (FileNotFoundException)
             {
