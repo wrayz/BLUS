@@ -38,7 +38,9 @@ namespace Scheduler
         private bool IsTarFileExists()
         {
             var path = this._configuration.GetValue<string>("FolderPath");
-            var fileCount = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories).Length;
+            var pattern = this._configuration.GetValue<string>("FilePattern");
+            var fileCount = Directory.GetFiles(path, pattern, SearchOption.AllDirectories).Length;
+
             _logger.LogInformation($"Checking {path} at {DateTime.Now}");
             _logger.LogInformation($"File count: {fileCount}");
 
@@ -48,18 +50,22 @@ namespace Scheduler
         private void DoWork()
         {
             var cmd = _configuration.GetValue<string>("Cmd");
-            var process = new Process();
-            process.StartInfo = new ProcessStartInfo
+            var startInfo = new ProcessStartInfo
             {
-                WindowStyle = ProcessWindowStyle.Hidden,
-                FileName = "cmd.exe",
-                Arguments = cmd,
+                CreateNoWindow = true,
+                FileName = @"C:\Python39\python.exe",
+                Arguments = $"\"{cmd}\"",
                 UseShellExecute = false,
-                RedirectStandardError = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
             };
 
-            _logger.LogInformation($"cmd run: {cmd}");
-            process.Start();
+            using (var process = Process.Start(startInfo))
+            {
+                _logger.LogInformation($"cmd run: {cmd}");
+                _logger.LogInformation($"cmd run: {process.StandardError.ReadToEnd()}");
+                _logger.LogInformation($"cmd run: {process.StandardOutput.ReadToEnd()}");
+            }
         }
     }
 }
