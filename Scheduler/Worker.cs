@@ -27,6 +27,7 @@ namespace Scheduler
             while (!stoppingToken.IsCancellationRequested)
             {
                 var milliseconds = this._configuration.GetValue<int>("IntervalMinutes") * 60 * 1000;
+                // var milliseconds = 60000;
 
                 bool isExist = IsTarFileExists();
                 if (isExist) DoWork();
@@ -39,6 +40,8 @@ namespace Scheduler
         {
             var path = this._configuration.GetValue<string>("FolderPath");
             var pattern = this._configuration.GetValue<string>("FilePattern");
+            // var path = @"C:/Blusense/parser/tarfiles/new";
+            // var pattern = "*.tar";
             var fileCount = Directory.GetFiles(path, pattern, SearchOption.AllDirectories).Length;
 
             _logger.LogInformation($"Checking {path} at {DateTime.Now}");
@@ -49,7 +52,8 @@ namespace Scheduler
 
         private void DoWork()
         {
-            var cmd = _configuration.GetValue<string>("Cmd");
+            // var cmd = _configuration.GetValue<string>("Cmd");
+            var cmd = "C:/Blusense/parser/fileparser.py";
             var startInfo = new ProcessStartInfo
             {
                 CreateNoWindow = true,
@@ -60,12 +64,25 @@ namespace Scheduler
                 RedirectStandardError = true
             };
 
+            var pt = @"C:\Blusense\log.txt";
+
             using (var process = Process.Start(startInfo))
             {
-                _logger.LogInformation($"cmd run: {cmd}");
-                _logger.LogInformation($"cmd run: {process.StandardError.ReadToEnd()}");
-                _logger.LogInformation($"cmd run: {process.StandardOutput.ReadToEnd()}");
+                // _logger.LogInformation($"cmd run: {cmd}");
+                // _logger.LogInformation($"cmd run: {process.StandardError.ReadToEnd()}");
+                // _logger.LogInformation($"cmd run: {process.StandardOutput.ReadToEnd()}");
+
+                File.AppendAllText(pt, cmd);
+                File.AppendAllText(pt, process.StandardOutput.ReadToEnd());
+                File.AppendAllText(pt, process.StandardError.ReadToEnd());
             }
+        }
+
+        public override async Task StopAsync(CancellationToken cancellationToken)
+        {
+            _logger.LogInformation("Queued Hosted Service is stopping.");
+
+            await base.StopAsync(cancellationToken);
         }
     }
 }
