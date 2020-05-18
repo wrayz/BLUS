@@ -27,7 +27,6 @@ namespace Scheduler
             while (!stoppingToken.IsCancellationRequested)
             {
                 var milliseconds = this._configuration.GetValue<int>("IntervalMinutes") * 60 * 1000;
-                // var milliseconds = 60000;
 
                 bool isExist = IsTarFileExists();
                 if (isExist) DoWork();
@@ -40,8 +39,6 @@ namespace Scheduler
         {
             var path = this._configuration.GetValue<string>("FolderPath");
             var pattern = this._configuration.GetValue<string>("FilePattern");
-            // var path = @"C:/Blusense/parser/tarfiles/new";
-            // var pattern = "*.tar";
             var fileCount = Directory.GetFiles(path, pattern, SearchOption.AllDirectories).Length;
 
             _logger.LogInformation($"Checking {path} at {DateTime.Now}");
@@ -52,12 +49,12 @@ namespace Scheduler
 
         private void DoWork()
         {
-            // var cmd = _configuration.GetValue<string>("Cmd");
-            var cmd = "C:/Blusense/parser/fileparser.py";
+            var cmd = _configuration.GetValue<string>("Cmd");
+            var python = _configuration.GetValue<string>("PythonPath");
             var startInfo = new ProcessStartInfo
             {
                 CreateNoWindow = true,
-                FileName = @"C:\Python39\python.exe",
+                FileName = python,
                 Arguments = $"\"{cmd}\"",
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
